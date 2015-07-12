@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B38AD041B520C4600780844 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B38AD031B520C4600780844 /* CoreBluetooth.framework */; };
 		7BA303D11B50B36400269459 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA303D01B50B36400269459 /* main.m */; };
 		7BA303D41B50B36400269459 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA303D31B50B36400269459 /* AppDelegate.m */; };
 		7BA303D71B50B36400269459 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BA303D61B50B36400269459 /* ViewController.m */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B38AD031B520C4600780844 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		7BA303CB1B50B36400269459 /* Bluetooth-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bluetooth-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BA303CF1B50B36400269459 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BA303D01B50B36400269459 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B38AD041B520C4600780844 /* CoreBluetooth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +63,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B38AD051B520C4B00780844 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B38AD031B520C4600780844 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7BA303C21B50B36400269459 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +92,7 @@
 		7BA303CD1B50B36400269459 /* Bluetooth-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				7B38AD051B520C4B00780844 /* Frameworks */,
 				7BA303D21B50B36400269459 /* AppDelegate.h */,
 				7BA303D31B50B36400269459 /* AppDelegate.m */,
 				7BA303D51B50B36400269459 /* ViewController.h */,
@@ -418,6 +430,7 @@
 				7BA303F01B50B36400269459 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7BA303F11B50B36400269459 /* Build configuration list for PBXNativeTarget "Bluetooth-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +439,7 @@
 				7BA303F31B50B36400269459 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
