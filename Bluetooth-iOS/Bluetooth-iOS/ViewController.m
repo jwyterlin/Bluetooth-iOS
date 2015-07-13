@@ -8,20 +8,37 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+#import <CoreBluetooth/CoreBluetooth.h>
+
+@interface ViewController ()<CBCentralManagerDelegate>
+
+@property(nonatomic,strong) CBCentralManager *myCentralManager;
 
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
+#pragma mark - View Lifecycle
+
+-(void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.myCentralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - CBCentralManagerDelegate methods
+
+-(void)centralManagerDidUpdateState:(CBCentralManager *)central {
+    
+    
+    
 }
 
 @end
