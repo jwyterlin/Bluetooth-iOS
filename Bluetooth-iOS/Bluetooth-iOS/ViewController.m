@@ -26,6 +26,8 @@
 
     self.myCentralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
     
+    [self.myCentralManager scanForPeripheralsWithServices:nil options:nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,7 +39,19 @@
 
 -(void)centralManagerDidUpdateState:(CBCentralManager *)central {
     
-    
+    if ( central.state == CBCentralManagerStatePoweredOff ) {
+        NSLog(@"PoweredOff");
+    } else if ( central.state == CBCentralManagerStatePoweredOn ) {
+        NSLog(@"PoweredOn");
+    } else if ( central.state == CBCentralManagerStateResetting ) {
+        NSLog(@"Resetting");
+    } else if ( central.state == CBCentralManagerStateUnauthorized ) {
+        NSLog(@"Unauthorized");
+    } else if ( central.state == CBCentralManagerStateUnknown ) {
+        NSLog(@"Unknown");
+    } else if ( central.state == CBCentralManagerStateUnsupported ) {
+        NSLog(@"Unsupported");
+    }
     
 }
 
