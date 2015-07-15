@@ -55,4 +55,25 @@
     
 }
 
+-(void)centralManager:(CBCentralManager *)central
+didDiscoverPeripheral:(CBPeripheral *)peripheral
+    advertisementData:(NSDictionary *)advertisementData
+                 RSSI:(NSNumber *)RSSI {
+    
+    NSLog( @"Discovered: %@", peripheral.name );
+    
+    [self stopScan];
+    
+}
+
+#pragma mark - Private methods
+
+-(void)stopScan {
+    
+    [self.myCentralManager stopScan];
+    
+    NSLog(@"Scanning stopped");
+    
+}
+
 @end
