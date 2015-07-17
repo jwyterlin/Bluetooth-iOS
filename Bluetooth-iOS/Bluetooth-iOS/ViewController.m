@@ -64,6 +64,9 @@ didDiscoverPeripheral:(CBPeripheral *)peripheral
     
     [self stopScan];
     
+    // Connecting to the discovered peripheral
+    [self.myCentralManager connectPeripheral:peripheral options:nil];
+    
 }
 
 #pragma mark - Private methods
