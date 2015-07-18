@@ -23,7 +23,8 @@
 -(void)viewDidLoad {
     
     [super viewDidLoad];
-
+    
+    // I use this to scan for peripherals
     self.myCentralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
     
     [self.myCentralManager scanForPeripheralsWithServices:nil options:nil];
