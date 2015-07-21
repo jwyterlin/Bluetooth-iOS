@@ -10,7 +10,7 @@
 
 #import <CoreBluetooth/CoreBluetooth.h>
 
-@interface ViewController ()<CBCentralManagerDelegate>
+@interface ViewController ()<CBCentralManagerDelegate,CBPeripheralDelegate>
 
 @property(nonatomic,strong) CBCentralManager *myCentralManager;
 
@@ -66,6 +66,15 @@ didDiscoverPeripheral:(CBPeripheral *)peripheral
     
     // Connecting to the discovered peripheral
     [self.myCentralManager connectPeripheral:peripheral options:nil];
+    
+}
+
+-(void)centralManager:(CBCentralManager *)central
+ didConnectPeripheral:(CBPeripheral *)peripheral {
+    
+    NSLog( @"Peripheral connected" );
+    
+    peripheral.delegate = self;
     
 }
 
