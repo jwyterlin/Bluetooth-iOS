@@ -77,6 +77,8 @@ didDiscoverPeripheral:(CBPeripheral *)peripheral
     
     peripheral.delegate = self;
     
+    [peripheral discoverServices:nil];
+    
 }
 
 #pragma mark - Private methods
