@@ -81,6 +81,17 @@ didDiscoverPeripheral:(CBPeripheral *)peripheral
     
 }
 
+#pragma mark - CBPeripheralDelegate methods
+
+-(void)peripheral:(CBPeripheral *)peripheral
+didDiscoverServices:(NSError *)error {
+
+    for (CBService *service in peripheral.services) {
+        NSLog(@"Discovered service %@", service);
+    }
+    
+}
+
 #pragma mark - Private methods
 
 -(void)stopScan {
