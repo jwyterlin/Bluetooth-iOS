@@ -83,11 +83,19 @@ didDiscoverPeripheral:(CBPeripheral *)peripheral
 
 #pragma mark - CBPeripheralDelegate methods
 
--(void)peripheral:(CBPeripheral *)peripheral
-didDiscoverServices:(NSError *)error {
+-(void)peripheral:(CBPeripheral *)peripheral didDiscoverServices:(NSError *)error {
 
     for (CBService *service in peripheral.services) {
         NSLog(@"Discovered service %@", service);
+        [peripheral discoverCharacteristics:nil forService:service];
+    }
+    
+}
+
+-(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
+
+    for (CBCharacteristic *characteristic in service.characteristics) {
+        NSLog(@"Discovered characteristic %@", characteristic);
     }
     
 }
