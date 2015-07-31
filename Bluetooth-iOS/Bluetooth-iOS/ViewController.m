@@ -95,8 +95,21 @@ didDiscoverPeripheral:(CBPeripheral *)peripheral
 -(void)peripheral:(CBPeripheral *)peripheral didDiscoverCharacteristicsForService:(CBService *)service error:(NSError *)error {
 
     for (CBCharacteristic *characteristic in service.characteristics) {
+
         NSLog(@"Discovered characteristic %@", characteristic);
+        
+        // Reading value for characteristic
+        [peripheral readValueForCharacteristic:characteristic];
+        
     }
+    
+}
+
+-(void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
+    
+    NSData *data = characteristic.value;
+    
+    NSLog( @"characteristic.value: %@", characteristic.value );
     
 }
 
