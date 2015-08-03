@@ -101,6 +101,9 @@ didDiscoverPeripheral:(CBPeripheral *)peripheral
         // Reading value for characteristic
         [peripheral readValueForCharacteristic:characteristic];
         
+        // Subscribing to a characteristic
+        [peripheral setNotifyValue:YES forCharacteristic:characteristic];
+        
     }
     
 }
